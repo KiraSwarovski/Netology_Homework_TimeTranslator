@@ -21,7 +21,6 @@ public class Main {
             minute = Integer.parseInt(scanner.nextLine());
             Time time = new Time();
             int currentTimeTask =  time.convertToSecond(day,hour,minute);
-
            totalTime+=currentTimeTask;
            if(currentTimeTask>biggestTime)biggestTime=currentTimeTask;
            if(currentTimeTask<smallestTime)smallestTime=currentTimeTask;

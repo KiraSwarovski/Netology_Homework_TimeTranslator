@@ -7,11 +7,4 @@ public class Time {
         return second=days*86400+hour*3600+minutes*60;
     }
 
-    public int getSecond() {
-        return second;
-    }
-
-    public void setSecond(int second) {
-        this.second = second;
-    }
 }
