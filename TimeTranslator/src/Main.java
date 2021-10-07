@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = "";
-        int totalTime = 0;
-        int biggestTime = 0;
-        int smallestTime = Integer.MAX_VALUE;
+        long totalTime = 0;
+        long biggestTime = 0;
+        long smallestTime = Integer.MAX_VALUE;
         int day = 0;
         int hour = 0;
         int minute = 0;
@@ -19,8 +19,8 @@ public class Main {
             hour = Integer.parseInt(scanner.nextLine());
             System.out.println("Сколько минут");
             minute = Integer.parseInt(scanner.nextLine());
-            Time time = new Time();
-            int currentTimeTask =  time.convertToSecond(day,hour,minute);
+            Time time = new Time(day,hour,minute);
+            long currentTimeTask =  time.getSecond();
            totalTime+=currentTimeTask;
            if(currentTimeTask>biggestTime)biggestTime=currentTimeTask;
            if(currentTimeTask<smallestTime)smallestTime=currentTimeTask;

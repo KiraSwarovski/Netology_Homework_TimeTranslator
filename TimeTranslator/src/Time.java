@@ -1,10 +1,23 @@
 public class Time {
-    private  int second = 0;
-    public   int convertToSecond(int days, int hour, int minutes){
-        if(days<0)days=0;
-        if(hour<0)hour=0;
-        if(minutes<0)minutes=0;
-        return second=days*86400+hour*3600+minutes*60;
+
+
+    private long second = 0;
+
+    public long getSecond() {
+        return second;
     }
 
+
+    public Time(int days, int hour, int minutes) {
+        this.second = (multiplyValue(days, 86400) + multiplyValue(hour, 3600) + multiplyValue(minutes, 60));
+    }
+
+    private long multiplyValue(int time1, int someValue) {
+        return (long) time1 * someValue;
+    }
+
+    @Override
+    public String toString() {
+        return "" + second;
+    }
 }
