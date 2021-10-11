@@ -16,8 +16,8 @@ public class Time {
         return (long) time1 * someValue;
     }
 
-    @Override
+/*    @Override
     public String toString() {
         return "" + second;
-    }
+    }*/
 }
