@@ -19,40 +19,41 @@ public class Main {
         }
         switch (number) {
             case 1:
-                Compare();
+                compare();
                 break;
             case 2:
-                Round();
+                round();
                 break;
             case 3:
-                DiscardFractionalPart();
+                discardFractionalPart();
                 break;
         }
 
     }
 
-    public static void Compare() {
+    public static void compare() {
         System.out.println("Введите первое число:");
         double firstNumber = sc.nextDouble();
         System.out.println("Введите второе число:");
         float secondNumber = sc.nextFloat();
-        if (firstNumber > secondNumber) {
+        if(Math.abs(firstNumber-secondNumber)<0.00001) System.out.println("числа равны");
+        else if ((firstNumber-secondNumber)>0.00001) {
             System.out.println(firstNumber + " больше,чем " + secondNumber);
-        } else if (secondNumber > firstNumber) System.out.println(secondNumber + " больше,чем " + firstNumber);
-        else System.out.println("числа равны");
+        } else if ((firstNumber-secondNumber)<-0.00001) System.out.println(secondNumber + " больше,чем " + firstNumber);
+        else System.out.println("Error");
     }
 
-    public static void Round() {
+    public static void round() {
         System.out.println("Введите  число:");
-        double firstNumber = sc.nextDouble();
-        int result = (int) Math.round(firstNumber);
+        double roundNumber = sc.nextDouble();
+        double result =  Math.round(roundNumber);
         System.out.println("Результат: " + result);
     }
 
-    public static void DiscardFractionalPart() {
+    public static void discardFractionalPart() {
         System.out.println("Введите  число:");
-        double firstNumber = sc.nextDouble();
-        long result = (long) firstNumber;
+        double discardNumber = sc.nextDouble();
+        long result = (long) discardNumber;
         System.out.println("Результат: " + result);
     }
 }
