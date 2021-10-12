@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DoubleCompare/DoubleCompare.iml" filepath="$PROJECT_DIR$/DoubleCompare/DoubleCompare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EncryptionMachine/EncryptionMachine.iml" filepath="$PROJECT_DIR$/EncryptionMachine/EncryptionMachine.iml" />
       <module fileurl="file://$PROJECT_DIR$/LeapYear/LeapYear.iml" filepath="$PROJECT_DIR$/LeapYear/LeapYear.iml" />
       <module fileurl="file://$PROJECT_DIR$/Netology_Homework.iml" filepath="$PROJECT_DIR$/Netology_Homework.iml" />
       <module fileurl="file://$PROJECT_DIR$/TimeTranslator/TimeTranslator.iml" filepath="$PROJECT_DIR$/TimeTranslator/TimeTranslator.iml" />
