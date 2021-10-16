@@ -9,6 +9,6 @@ public class Publisher {
 
     @Override
     public String toString() {
-        return ("The publisher is "+publisherName+" ;"+"\n"+" From a country: "+country);
+        return ("The publisher is " + publisherName + " ;" + "\n" + "From a country: " + country);
     }
 }
