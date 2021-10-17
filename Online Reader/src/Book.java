@@ -2,10 +2,9 @@
 public class Book {
 
 
-    public int getPriceOfBook() {
-        return priceOfBook;
+    public String getBookName() {
+        return bookName;
     }
-
 
     private String bookName;
     private int pageNumber;
@@ -37,19 +36,20 @@ public class Book {
         else System.out.println(this.bookName + " has equal page to " + book.bookName);
     }
 
-    public void ListsOfPagesForScanning(Book book) {
+    public void ListsOfPagesForScanning() {
         int bookCover = 2;
-        if (this.pageNumber % 2 == 0)
-            System.out.println(this.bookName + " needs " + this.pageNumber / 2 + bookCover + " lists of page for scanning");
+        int result=pageNumber/2;
+        if (pageNumber % 2 == 0)
+            System.out.println(bookName + " needs " + result+ " lists of page for scanning");
         else
-            System.out.println(this.bookName + " needs " + this.pageNumber / 2 + bookCover + 1 + " lists of page for scanning");
+            System.out.println(bookName + " needs " + result+ " lists of page for scanning");
     }
 
     public void CompareLenghtOfPublisherName(Book book) {
         int diffLenghtOfString = this.publisher.publisherName.length()-book.publisher.publisherName.length();
-        if(diffLenghtOfString>0) System.out.println(this.bookName + " has longer publisher name than" + book.bookName);
-        else if(diffLenghtOfString<0) System.out.println(this.bookName + " has less publisher name than" + book.bookName);
-        else System.out.println(this.bookName + " has longer publisher name than" + book.bookName);
+        if(diffLenghtOfString>0) System.out.println(this.bookName + " has longer publisher name than " + book.bookName);
+        else if(diffLenghtOfString<0) System.out.println(this.bookName + " has less publisher name than " + book.bookName);
+        else System.out.println(this.bookName + " has longer publisher name than " + book.bookName);
 
     }
 
