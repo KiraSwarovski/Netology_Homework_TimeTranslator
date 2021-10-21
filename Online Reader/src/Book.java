@@ -40,9 +40,9 @@ public class Book {
         int bookCover = 2;
         int result=pageNumber/2;
         if (pageNumber % 2 == 0)
-            System.out.println(bookName + " needs " + result+ " lists of page for scanning");
+            System.out.println(bookName + " needs " + pageNumber/2+ " lists of page for scanning");
         else
-            System.out.println(bookName + " needs " + result+ " lists of page for scanning");
+            System.out.println(bookName + " needs " + pageNumber/2+1+ " lists of page for scanning");
     }
 
     public void CompareLenghtOfPublisherName(Book book) {

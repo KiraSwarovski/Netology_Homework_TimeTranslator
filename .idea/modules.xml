@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/1 Dimension Array/1 Dimension Array.iml" filepath="$PROJECT_DIR$/1 Dimension Array/1 Dimension Array.iml" />
       <module fileurl="file://$PROJECT_DIR$/DoubleCompare/DoubleCompare.iml" filepath="$PROJECT_DIR$/DoubleCompare/DoubleCompare.iml" />
       <module fileurl="file://$PROJECT_DIR$/EncryptionMachine/EncryptionMachine.iml" filepath="$PROJECT_DIR$/EncryptionMachine/EncryptionMachine.iml" />
       <module fileurl="file://$PROJECT_DIR$/LeapYear/LeapYear.iml" filepath="$PROJECT_DIR$/LeapYear/LeapYear.iml" />
