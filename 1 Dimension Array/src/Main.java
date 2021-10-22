@@ -13,7 +13,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Выберите товар и количество или введите `end` ");
+            System.out.println("Choose product and quantity OR type `end` ");
             String line = scanner.nextLine();
             if ("end".equals(line)) {
                 scanner.close();
@@ -24,19 +24,17 @@ public class Main {
             int quantity = Integer.parseInt(parts[1]);
 
             totalQuantity[productNumber] += quantity;
-            totasSumForPay += prices[productNumber] * totalQuantity[productNumber];
+            totasSumForPay += prices[productNumber] * quantity;
         }
-        for (String s:arrayTitle()) {
-            System.out.print(s+"\t");
+        for (String s : arrayTitle()) {
+            System.out.print(s + "\t");
         }
         System.out.println();
         for (int i = 0; i < products.length; i++) {
             if (totalQuantity[i] > 0)
-                System.out.format("%-12s\t%-8d\t%-14d\t%-8d\n",products[i], totalQuantity[i] ,  prices[i] ,totalQuantity[i] * prices[i]);
+                System.out.format("%-12s\t%-8d\t%-14d\t%-8d\n", products[i], totalQuantity[i], prices[i], totalQuantity[i] * prices[i]);
         }
-        System.out.printf("%41s\t%-8d", "Total Price: ",totasSumForPay);
-
-
+        System.out.printf("%41s\t%-8d", "Total Price: ", totasSumForPay);
     }
 
     public static String[] arrayToAddProducts() {
@@ -60,6 +58,5 @@ public class Main {
             count++;
             System.out.println(count + ". " + prod[i] + " " + price[i] + " dollar apiece" + "\t");
         }
-
     }
 }
