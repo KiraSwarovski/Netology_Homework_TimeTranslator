@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/Online Reader/Online Reader.iml" filepath="$PROJECT_DIR$/Online Reader/Online Reader.iml" />
       <module fileurl="file://$PROJECT_DIR$/TimeTranslator/TimeTranslator.iml" filepath="$PROJECT_DIR$/TimeTranslator/TimeTranslator.iml" />
       <module fileurl="file://$PROJECT_DIR$/YellowgreenRemarkableRom/YellowgreenRemarkableRom.iml" filepath="$PROJECT_DIR$/YellowgreenRemarkableRom/YellowgreenRemarkableRom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/massive/massive.iml" filepath="$PROJECT_DIR$/massive/massive.iml" />
     </modules>
   </component>
 </project>
