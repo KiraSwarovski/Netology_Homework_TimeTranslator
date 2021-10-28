@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -7,22 +5,28 @@ public class Main {
         String[] products = arrayToAddProducts();
         int[] prices = arrayToAddPricesOfProduct();
         int[] totalQuantity = new int[products.length];
-        String[] title = arrayTitle();
         arrayToPrint(products, prices);
         int totasSumForPay = 0;
         Scanner scanner = new Scanner(System.in);
-
+        int productNumber = 0;
+        int quantity = 0;
         while (true) {
             System.out.println("Choose product and quantity OR type `end` ");
             String line = scanner.nextLine();
+
             if ("end".equals(line)) {
                 scanner.close();
                 break;
             }
             String[] parts = line.split(" ");
-            int productNumber = Integer.parseInt(parts[0]) - 1;
-            int quantity = Integer.parseInt(parts[1]);
 
+            try {
+                productNumber = Integer.parseInt(parts[0]) - 1;
+                quantity = Integer.parseInt(parts[1]);
+            }catch (NumberFormatException e) {
+                System.out.println("Invalid format. Try only numbers.");
+                break;
+            }
             totalQuantity[productNumber] += quantity;
             totasSumForPay += prices[productNumber] * quantity;
         }
@@ -53,10 +57,9 @@ public class Main {
     }
 
     public static void arrayToPrint(String[] prod, int[] price) {
-        int count = 0;
         for (int i = 0; i < prod.length; i++) {
-            count++;
-            System.out.println(count + ". " + prod[i] + " " + price[i] + " dollar apiece" + "\t");
+            int g = i+1;
+            System.out.printf("%d%s\t%s\t%d\t%s\n", g ,"." ,prod[i] ,price[i],"dollar apiece");
         }
     }
 }

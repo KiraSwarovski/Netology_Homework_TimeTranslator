@@ -1,19 +1,20 @@
-public class ProductList {
+public class Product {
     private String name;
     private int price;
     private String description;
 
-    public ProductList(String name, int price, String description) {
+    public Product(String name, int price, String description) {
         this.name = name;
         this.price = price;
         this.description = description;
     }
 
     public String toString() {
-        return (name + " " + price + " " + description);
+        return (name + " costs " + price + " - " + description);
     }
 
-    public int getPrice() {
+    // getters and setters
+    public int getPrice () {
         return this.price;
     }
 }
