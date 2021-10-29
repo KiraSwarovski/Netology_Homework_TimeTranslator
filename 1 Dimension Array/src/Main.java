@@ -6,7 +6,7 @@ public class Main {
         int[] prices = arrayToAddPricesOfProduct();
         int[] totalQuantity = new int[products.length];
         arrayToPrint(products, prices);
-        int totasSumForPay = 0;
+        int totalSumForPay = 0;
         Scanner scanner = new Scanner(System.in);
         int productNumber = 0;
         int quantity = 0;
@@ -23,12 +23,11 @@ public class Main {
             try {
                 productNumber = Integer.parseInt(parts[0]) - 1;
                 quantity = Integer.parseInt(parts[1]);
-            }catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Invalid format. Try only numbers.");
-                break;
+                continue;
             }
             totalQuantity[productNumber] += quantity;
-            totasSumForPay += prices[productNumber] * quantity;
         }
         for (String s : arrayTitle()) {
             System.out.print(s + "\t");
@@ -37,8 +36,9 @@ public class Main {
         for (int i = 0; i < products.length; i++) {
             if (totalQuantity[i] > 0)
                 System.out.format("%-12s\t%-8d\t%-14d\t%-8d\n", products[i], totalQuantity[i], prices[i], totalQuantity[i] * prices[i]);
+            totalSumForPay += totalQuantity[i] * prices[i];
         }
-        System.out.printf("%41s\t%-8d", "Total Price: ", totasSumForPay);
+        System.out.printf("%41s\t%-8d", "Total Price: ", totalSumForPay);
     }
 
     public static String[] arrayToAddProducts() {
@@ -58,8 +58,8 @@ public class Main {
 
     public static void arrayToPrint(String[] prod, int[] price) {
         for (int i = 0; i < prod.length; i++) {
-            int g = i+1;
-            System.out.printf("%d%s\t%s\t%d\t%s\n", g ,"." ,prod[i] ,price[i],"dollar apiece");
+            int countComma = i + 1;
+            System.out.printf("%d%s\t%s\t%d\t%15s\n", countComma, ".", prod[i], price[i], "dollar apiece");
         }
     }
 }
