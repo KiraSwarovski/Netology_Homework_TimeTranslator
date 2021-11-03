@@ -5,8 +5,9 @@ public class Main {
         String[] products = arrayToAddProducts();
         int[] prices = arrayToAddPricesOfProduct();
         int[] totalQuantity = new int[products.length];
+        int[] totalPrice = new int[products.length];
+        int sum = 0;
         arrayToPrint(products, prices);
-        int totalSumForPay = 0;
         Scanner scanner = new Scanner(System.in);
         int productNumber = 0;
         int quantity = 0;
@@ -28,6 +29,7 @@ public class Main {
                 continue;
             }
             totalQuantity[productNumber] += quantity;
+            totalPrice[productNumber] += quantity * prices[productNumber];
         }
         for (String s : arrayTitle()) {
             System.out.print(s + "\t");
@@ -35,10 +37,11 @@ public class Main {
         System.out.println();
         for (int i = 0; i < products.length; i++) {
             if (totalQuantity[i] > 0)
-                System.out.format("%-12s\t%-8d\t%-14d\t%-8d\n", products[i], totalQuantity[i], prices[i], totalQuantity[i] * prices[i]);
-            totalSumForPay += totalQuantity[i] * prices[i];
+
+                System.out.format("%-12s\t%-8d\t%-14d\t%-8d\n", products[i], totalQuantity[i], prices[i], totalPrice[i]);
+            sum += totalPrice[i];
         }
-        System.out.printf("%41s\t%-8d", "Total Price: ", totalSumForPay);
+        System.out.printf("%41s\t%-8d", "Total Price: ", sum);
     }
 
     public static String[] arrayToAddProducts() {
