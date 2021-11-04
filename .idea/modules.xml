@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/1 Dimension Array/1 Dimension Array.iml" filepath="$PROJECT_DIR$/1 Dimension Array/1 Dimension Array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DoubleCompare/DoubleCompare.iml" filepath="$PROJECT_DIR$/DoubleCompare/DoubleCompare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EncryptionMachine/EncryptionMachine.iml" filepath="$PROJECT_DIR$/EncryptionMachine/EncryptionMachine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LeapYear/LeapYear.iml" filepath="$PROJECT_DIR$/LeapYear/LeapYear.iml" />
       <module fileurl="file://$PROJECT_DIR$/Netology_Homework.iml" filepath="$PROJECT_DIR$/Netology_Homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Online Reader/Online Reader.iml" filepath="$PROJECT_DIR$/Online Reader/Online Reader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Quick Sort Ocheretnaya/Quick Sort Ocheretnaya.iml" filepath="$PROJECT_DIR$/Quick Sort Ocheretnaya/Quick Sort Ocheretnaya.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Recursion_Study/Recursion_Study.iml" filepath="$PROJECT_DIR$/Recursion_Study/Recursion_Study.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rotate matrix/Rotate matrix.iml" filepath="$PROJECT_DIR$/Rotate matrix/Rotate matrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SeaBattle/SeaBattle.iml" filepath="$PROJECT_DIR$/SeaBattle/SeaBattle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TimeTranslator/TimeTranslator.iml" filepath="$PROJECT_DIR$/TimeTranslator/TimeTranslator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YellowgreenRemarkableRom/YellowgreenRemarkableRom.iml" filepath="$PROJECT_DIR$/YellowgreenRemarkableRom/YellowgreenRemarkableRom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/massive from Ocheret/massive from Ocheret.iml" filepath="$PROJECT_DIR$/massive from Ocheret/massive from Ocheret.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tic tac toe/tic tac toe.iml" filepath="$PROJECT_DIR$/tic tac toe/tic tac toe.iml" />
     </modules>
   </component>
 </project>
