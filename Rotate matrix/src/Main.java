@@ -15,7 +15,9 @@ public class Main {
         System.out.println("\n");
 
         Scanner scnr = new Scanner(System.in);
+        System.out.println("Type angle multiply of 90, no more than 360");
         int degrees = Integer.parseInt(scnr.nextLine());
+        scnr.close();
         int[][] rotatedColors = transportMatrix(colors, degrees);
         displayArray(rotatedColors);
     }
