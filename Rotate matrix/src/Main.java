@@ -30,8 +30,8 @@ public class Main {
     }
 
     public static int[][] transportMatrix(int[][] arr, int degrees) {
-        int times = 360 % 4;
-        for (int i = 0; i < times; i++) {
+        int times = degrees / 90;
+        for (int n = 0; n < times; n++) {
 
             for (int i = 0; i < arr.length; i++) {
                 for (int j = i; j < arr.length; j++) {
