@@ -13,7 +13,6 @@ public class Main {
         }
         displayArray(colors);
         System.out.println("\n");
-
         Scanner scnr = new Scanner(System.in);
         System.out.println("Type angle multiply of 90, no more than 360");
         int degrees = Integer.parseInt(scnr.nextLine());
