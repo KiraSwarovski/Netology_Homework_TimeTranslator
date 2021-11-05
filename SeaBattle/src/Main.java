@@ -25,10 +25,10 @@ public class Main {
         }
 
         Scanner scanner = new Scanner(System.in);
-        while (turnCount<=MAX_TURN) {
+        while (turnCount <= MAX_TURN) {
             printArray(warField);
-            int fireY = scanner.nextInt()-1;
-            int fireX = scanner.nextInt()-1;
+            int fireY = scanner.nextInt() - 1;
+            int fireX = scanner.nextInt() - 1;
             switch (warField[fireY][fireX]) {
                 case EMPTY:
                     turnCount++;
