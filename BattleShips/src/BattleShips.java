@@ -128,9 +128,9 @@ public class BattleShips {
         do {
             Scanner input = new Scanner(System.in);
             System.out.print("Enter X coordinate: ");
-            x = input.nextInt();
+            x = input.nextInt()-1;
             System.out.print("Enter Y coordinate: ");
-            y = input.nextInt();
+            y = input.nextInt()-1;
 
             if ((x >= 0 && x < numRows) && (y >= 0 && y < numCols)) //valid guess
             {

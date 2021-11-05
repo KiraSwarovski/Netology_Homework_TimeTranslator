@@ -1,6 +1,12 @@
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * How to play:
+ * //  1.1 Y coordinate is vertically;
+ * //  1.2 X coordinate is horizontally;
+ * 2.
+ */
 public class Main {
     public static final int EMPTY = 0;
     public static final int SHIP = 1;
@@ -9,45 +15,11 @@ public class Main {
     public static final int MAX_SHIP = 1;
     public static final int MAX_TURN = 2;
     public static final int SIZE = 10;
+    public static final int warField[][] = new int[SIZE][SIZE];
 
     public static void main(String[] args) {
-        int turnCount = 0;
-        int deadCount = 0;
-        int warField[][] = new int[SIZE][SIZE];
-        Random random = new Random();
-        for (int i = 0; i < MAX_SHIP; i++) {
-            int shipPlace1 = random.nextInt(SIZE);
-            int shipPlace2 = random.nextInt(SIZE);
-            if (warField[shipPlace1][shipPlace2] == SHIP) {
-                i--;
-            }
-            warField[shipPlace1][shipPlace2] = SHIP;
-        }
-
-        Scanner scanner = new Scanner(System.in);
-        while (turnCount <= MAX_TURN) {
-            printArray(warField);
-            int fireY = scanner.nextInt() - 1;
-            int fireX = scanner.nextInt() - 1;
-            switch (warField[fireY][fireX]) {
-                case EMPTY:
-                    turnCount++;
-                    warField[fireY][fireX] = MISS;
-                    break;
-                case SHIP:
-                    turnCount++;
-                    deadCount++;
-                    warField[fireY][fireX] = DEAD;
-                    break;
-                default:
-                    System.out.println("You have already fired this cell. Try again");
-                    break;
-            }
-            if (deadCount == MAX_SHIP) break;
-
-        }
-        scanner.close();
-        isWin(deadCount);
+        deployShip();
+        play();
     }
 
     public static void printArray(int arr[][]) {
@@ -70,6 +42,46 @@ public class Main {
                 break;
         }
 
+    }
+
+    public static void deployShip() {
+        Random random = new Random();
+        for (int i = 0; i < MAX_SHIP; i++) {
+            int shipPlace1 = random.nextInt(SIZE);
+            int shipPlace2 = random.nextInt(SIZE);
+            if (Main.warField[shipPlace1][shipPlace2] == SHIP) {
+                i--;
+            }
+            Main.warField[shipPlace1][shipPlace2] = SHIP;
+        }
+    }
+    public static void play(){
+        int turnCount = 0;
+        int deadCount = 0;
+        Scanner scanner = new Scanner(System.in);
+        while (turnCount < MAX_TURN) {
+            printArray(Main.warField);
+            int fireY = scanner.nextInt() - 1;
+            int fireX = scanner.nextInt() - 1;
+            switch (Main.warField[fireY][fireX]) {
+                case EMPTY:
+                    turnCount++;
+                    Main.warField[fireY][fireX] = MISS;
+                    break;
+                case SHIP:
+                    turnCount++;
+                    deadCount++;
+                    Main.warField[fireY][fireX] = DEAD;
+                    break;
+                default:
+                    System.out.println("You have already fired this cell. Try again");
+                    break;
+            }
+            if (deadCount == MAX_SHIP) break;
+
+        }
+        scanner.close();
+        isWin(deadCount);
     }
 }
 
