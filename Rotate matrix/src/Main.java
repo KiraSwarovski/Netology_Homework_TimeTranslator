@@ -2,22 +2,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+    public static final int SIZE = 8;
+
     public static void main(String[] args) {
-        int SIZE = 8;
         int[][] colors = new int[SIZE][SIZE];
-        Random random = new Random();
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                colors[i][j] = random.nextInt(256);
-            }
-        }
+        fillArrayWithRandomNumbers(colors);
         displayArray(colors);
-        System.out.println("\n");
-        Scanner scnr = new Scanner(System.in);
-        System.out.println("Type angle multiply of 90, no more than 360");
-        int degrees = Integer.parseInt(scnr.nextLine());
-        scnr.close();
-        int[][] rotatedColors = transportMatrix(colors, degrees);
+        int angle = chooseAngle();
+        int[][] rotatedColors = transportMatrix(colors, angle);
         displayArray(rotatedColors);
     }
 
@@ -30,33 +22,50 @@ public class Main {
         }
     }
 
-    public static int[][] transportMatrix(int[][] arr, int degrees) {
-        int times = degrees / 90;
+    public static int[][] transportMatrix(int[][] arr, int angle) {
+        int times = angle / 90;
         for (int n = 0; n < times; n++) {
-
-            for (int i = 0; i < arr.length; i++) {
-                for (int j = i; j < arr.length; j++) {
+            int[][] transportMatrix = new int[SIZE][SIZE];
+            for (int i = 0; i < transportMatrix.length; i++) {
+                for (int j = i; j < transportMatrix[0].length; j++) {
                     int temp = arr[i][j];
-                    arr[i][j] = arr[j][i];
-                    arr[j][i] = temp;
+                    transportMatrix[i][j] = arr[j][i];
+                    transportMatrix[j][i] = temp;
                 }
             }
-            for (int i = 0; i < arr.length; i++) {
-                int ri = arr[i].length - 1;
+            for (int i = 0; i < transportMatrix.length; i++) {
+                int ri = transportMatrix[i].length - 1;
                 int li = 0;
                 while (li < ri) {
-
-                    int temp = arr[li][i];
-                    arr[li][i] = arr[ri][i];
-                    arr[ri][i] = temp;
+                    int temp = transportMatrix[i][li];
+                    transportMatrix[i][li] = transportMatrix[i][ri];
+                    transportMatrix[i][ri] = temp;
                     ri--;
                     li++;
-
                 }
             }
+            arr = transportMatrix;
         }
-
         return arr;
     }
 
+    public static int[][] fillArrayWithRandomNumbers(int[][] arr) {
+
+        Random random = new Random();
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                arr[i][j] = random.nextInt(256);
+            }
+        }
+        return arr;
+    }
+
+    public static int chooseAngle() {
+        Scanner scnr = new Scanner(System.in);
+        System.out.println("\n");
+        System.out.println("Type angle multiply of 90, no more than 360");
+        int angle = Integer.parseInt(scnr.nextLine());
+        scnr.close();
+        return angle;
+    }
 }

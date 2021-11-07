@@ -5,15 +5,14 @@ import java.util.Scanner;
  * How to play:
  * //  1.1 Y coordinate is vertically;
  * //  1.2 X coordinate is horizontally;
- * 2.
  */
 public class Main {
     public static final int EMPTY = 0;
     public static final int SHIP = 1;
     public static final int DEAD = 2;
     public static final int MISS = 3;
-    public static final int MAX_SHIP = 1;
-    public static final int MAX_TURN = 2;
+    public static final int MAX_SHIP = 10;
+    public static final int MAX_TURN = 30;
     public static final int SIZE = 10;
     public static final int warField[][] = new int[SIZE][SIZE];
 
@@ -41,7 +40,6 @@ public class Main {
                 System.out.println("You lose");
                 break;
         }
-
     }
 
     public static void deployShip() {
@@ -55,30 +53,35 @@ public class Main {
             Main.warField[shipPlace1][shipPlace2] = SHIP;
         }
     }
-    public static void play(){
+
+    public static void play() {
         int turnCount = 0;
         int deadCount = 0;
         Scanner scanner = new Scanner(System.in);
         while (turnCount < MAX_TURN) {
             printArray(Main.warField);
+            int turnleft = MAX_TURN - turnCount;
+            System.out.println("Choose coordinates: Y(vertically) and X(horizontally)"
+                    + "\n" + turnleft + " turns left");
             int fireY = scanner.nextInt() - 1;
             int fireX = scanner.nextInt() - 1;
             switch (Main.warField[fireY][fireX]) {
                 case EMPTY:
                     turnCount++;
                     Main.warField[fireY][fireX] = MISS;
+                    System.out.println("You missed" + "\n");
                     break;
                 case SHIP:
                     turnCount++;
                     deadCount++;
                     Main.warField[fireY][fireX] = DEAD;
+                    System.out.println("You hit the ship" + "\n");
                     break;
                 default:
                     System.out.println("You have already fired this cell. Try again");
                     break;
             }
             if (deadCount == MAX_SHIP) break;
-
         }
         scanner.close();
         isWin(deadCount);
