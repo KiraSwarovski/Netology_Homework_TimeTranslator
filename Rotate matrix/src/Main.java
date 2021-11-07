@@ -20,6 +20,7 @@ public class Main {
             }
             System.out.println();
         }
+
     }
 
     public static int[][] transportMatrix(int[][] arr, int angle) {
