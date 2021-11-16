@@ -15,8 +15,7 @@ public class Bill {
 
     public void payTaxes() {
         // TODO вместо 0.0 посчитать размер налога исходя из TaxType
-        BigDecimal taxAmount = BigDecimal.valueOf(taxType.calculateTaxFor(this.amount));
-
+        BigDecimal taxAmount = taxType.calculateTaxFor(amount);
         taxService.payOut(taxAmount);
     }
 }
