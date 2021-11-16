@@ -19,12 +19,12 @@ public class Main {
         System.out.println("У Вас создано " + payments.length +
                 " счета. Их параметры:");
         System.out.println("название, сумма, вид налога, ставка");
-        for (int i = 0; i < payments.length; ++i) {
-            Bill bill = payments[i];
-            System.out.println(payments[i].name + " " + payments[i].amount + " " +
-                    payments[i].taxType + " " + bill.taxType.calculateTaxFor(i));
-            //todo Bill bill = payments[i];
-            //todo bill.payTaxes();
-        }
+//        for (int i = 0; i < payments.length; ++i) {
+//            Bill bill = payments[i];
+//            System.out.println(payments[i].name + " " + payments[i].amount + " " +
+//                    payments[i].taxType + " " + bill.taxType.calculateTaxFor(i));
+//            //todo Bill bill = payments[i];
+//            //todo bill.payTaxes();
+//        }
     }
 }
