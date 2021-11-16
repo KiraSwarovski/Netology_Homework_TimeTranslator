@@ -22,6 +22,7 @@
       <module fileurl="file://$PROJECT_DIR$/TimeTranslator/TimeTranslator.iml" filepath="$PROJECT_DIR$/TimeTranslator/TimeTranslator.iml" />
       <module fileurl="file://$PROJECT_DIR$/TryBattleShip/TryBattleShip.iml" filepath="$PROJECT_DIR$/TryBattleShip/TryBattleShip.iml" />
       <module fileurl="file://$PROJECT_DIR$/YellowgreenRemarkableRom/YellowgreenRemarkableRom.iml" filepath="$PROJECT_DIR$/YellowgreenRemarkableRom/YellowgreenRemarkableRom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thisVsSuper/thisVsSuper.iml" filepath="$PROJECT_DIR$/thisVsSuper/thisVsSuper.iml" />
       <module fileurl="file://$PROJECT_DIR$/tic tac toe/tic tac toe.iml" filepath="$PROJECT_DIR$/tic tac toe/tic tac toe.iml" />
     </modules>
   </component>
