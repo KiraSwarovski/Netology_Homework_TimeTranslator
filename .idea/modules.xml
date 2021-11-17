@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/1 Dimension Array/1 Dimension Array.iml" filepath="$PROJECT_DIR$/1 Dimension Array/1 Dimension Array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Alexandrio_HelpWithPolymorphism/Alexandrio_HelpWithPolymorphism.iml" filepath="$PROJECT_DIR$/Alexandrio_HelpWithPolymorphism/Alexandrio_HelpWithPolymorphism.iml" />
       <module fileurl="file://$PROJECT_DIR$/BattleShips/BattleShips.iml" filepath="$PROJECT_DIR$/BattleShips/BattleShips.iml" />
       <module fileurl="file://$PROJECT_DIR$/DoubleCompare/DoubleCompare.iml" filepath="$PROJECT_DIR$/DoubleCompare/DoubleCompare.iml" />
       <module fileurl="file://$PROJECT_DIR$/EncryptionMachine/EncryptionMachine.iml" filepath="$PROJECT_DIR$/EncryptionMachine/EncryptionMachine.iml" />
@@ -21,6 +22,7 @@
       <module fileurl="file://$PROJECT_DIR$/TimeTranslator/TimeTranslator.iml" filepath="$PROJECT_DIR$/TimeTranslator/TimeTranslator.iml" />
       <module fileurl="file://$PROJECT_DIR$/TryBattleShip/TryBattleShip.iml" filepath="$PROJECT_DIR$/TryBattleShip/TryBattleShip.iml" />
       <module fileurl="file://$PROJECT_DIR$/YellowgreenRemarkableRom/YellowgreenRemarkableRom.iml" filepath="$PROJECT_DIR$/YellowgreenRemarkableRom/YellowgreenRemarkableRom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thisVsSuper/thisVsSuper.iml" filepath="$PROJECT_DIR$/thisVsSuper/thisVsSuper.iml" />
       <module fileurl="file://$PROJECT_DIR$/tic tac toe/tic tac toe.iml" filepath="$PROJECT_DIR$/tic tac toe/tic tac toe.iml" />
     </modules>
   </component>
