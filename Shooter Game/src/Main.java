@@ -15,11 +15,11 @@ public class Main {
             int input = scanner.nextInt();
             if (input == -1) break;
             slot = input - 1;
-            player.setOutOfRange(false);
+           // player.setOutOfRange(false);
             player.shotWithWeapon(slot);
-            if (player.getOutOfRange() == true) {
-                System.out.println("Invalid index");
-            }
+//            if (player.getOutOfRange() == true) {
+//              //  System.out.println("Invalid index");
+//            }
         }
         System.out.println("Game over!");
     }

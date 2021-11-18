@@ -16,8 +16,8 @@ public class ReaderImpl extends User implements Reader {
     @Override
     public void pickUpBooks(int num) {
         this.setNumBooks(this.getNumBooks() + num);
-        System.out.println(new StringBuilder().append("Reader ").append(this.getName()).append(" picked up ").append(num)
-                .append(" book(s) from the library. He now has ").append(this.getNumBooks()).toString());
+        System.out.println("Reader "+this.getName()+" picked up "+num+
+                " book(s) from the library. He now has "+this.getNumBooks());
     }
 
     @Override
