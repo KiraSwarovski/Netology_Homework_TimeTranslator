@@ -12,6 +12,7 @@ public class ReaderImp extends User implements Reader{
         this.numOfBooks = numOfBooks;
     }
 
+
     @Override
     public void takeBook(int book) {
         setNumOfBooks(book+this.getNumOfBooks());
