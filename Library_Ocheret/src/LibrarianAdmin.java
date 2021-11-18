@@ -17,6 +17,7 @@ public class LibrarianAdmin extends User implements Librarian, Administrator {
 
     @Override //administrator
     public void delayNotice(Reader reader) {
+        //TODO add boolean value
         System.out.println("Reader " + reader.toString() + " have delayed books");
     }
 }

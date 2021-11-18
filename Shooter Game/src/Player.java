@@ -2,7 +2,7 @@ import Weapon.*;
 
 class Player {
     private Weapon[] weaponSlots;
-    private  boolean isOutOfRange;
+    private boolean isOutOfRange;
 
     public Player() {
         weaponSlots = new Weapon[]{
@@ -26,12 +26,14 @@ class Player {
 
     public void shotWithWeapon(int slot) {
         //TODO обязательно сделать тернарник
-        if (slot < 0 || slot > getSlotsCount()) {
-            setOutOfRange(true);
-        } else {
-            Weapon weapon = weaponSlots[slot];
-            weapon.shot();
+        if (slot < 0 || slot >= getSlotsCount()) {
+//            setOutOfRange(true);
+            System.out.println("Invalid index");
+            return;
         }
+        Weapon weapon = weaponSlots[slot];
+        weapon.shot();
+
 
     }
 }

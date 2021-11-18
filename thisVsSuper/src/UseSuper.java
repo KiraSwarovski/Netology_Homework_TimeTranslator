@@ -1,7 +1,7 @@
 class C {
-    public int i;
+    public int c;
     public void print() {
-        System.out.println("C.i = " + i);
+        System.out.println("C.i = " + c);
     }
 }
 
@@ -9,8 +9,8 @@ class D extends C {
     public String i;
 
     public D(String a, int b) {
+       super.c = b;
         i = a;
-        super.i = b;
     }
 
     public void print() {
@@ -18,7 +18,6 @@ class D extends C {
         super.print();
     }
 }
-
 
 public class UseSuper {
     public static void main(String[] args) {
