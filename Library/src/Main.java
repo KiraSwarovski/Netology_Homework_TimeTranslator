@@ -6,6 +6,8 @@ public class Main {
 
         admin.orderBook(supplier);
         reader.takeBook(1);
+        reader.takeBook(1);
+        reader.takeBook(1);
 
     }
 }

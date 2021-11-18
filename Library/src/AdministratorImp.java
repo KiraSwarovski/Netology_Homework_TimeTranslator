@@ -19,6 +19,7 @@ class AdministratorLibraryImp extends User implements Administrator,Librarian{
     public void orderBook(Supplier supplier) {
         System.out.printf("%s is ready to order books from a supplier %s",
                 super.getName(),supplier);
+        System.out.println("\n");
     }
 
 

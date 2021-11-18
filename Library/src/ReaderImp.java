@@ -15,7 +15,7 @@ public class ReaderImp extends User implements Reader{
     @Override
     public void takeBook(int book) {
         setNumOfBooks(book+this.getNumOfBooks());
-        System.out.printf("");
+        System.out.format("%s has taken %d book(s)%n",super.getName(),getNumOfBooks());
     }
 
     @Override
