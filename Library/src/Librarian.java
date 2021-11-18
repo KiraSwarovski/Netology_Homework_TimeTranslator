@@ -1,3 +1,3 @@
 public interface Librarian {
-    void orderBook();
+    void orderBook(Supplier supplier);
 }
