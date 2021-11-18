@@ -1,5 +1,5 @@
 public interface Reader {
-    void takeBook();
+    void takeBook(int book);
 
     void returnBook();
 }
