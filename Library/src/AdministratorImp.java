@@ -17,9 +17,8 @@ class AdministratorLibraryImp extends User implements Administrator,Librarian{
 
     @Override // Librarian
     public void orderBook(Supplier supplier) {
-        System.out.printf("%s is ready to order books from a supplier %s",
+        System.out.printf("%s is ready to order books from a supplier %s%n",
                 super.getName(),supplier);
-        System.out.println("\n");
     }
 
 
