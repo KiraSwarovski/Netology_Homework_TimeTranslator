@@ -1,5 +1,6 @@
-public class ReaderImp extends User implements Reader{
-   private int numOfBooks;
+public class ReaderImp extends User implements Reader {
+    private int numOfBooks;
+
     public ReaderImp(String name, int dateOfBirth) {
         super(name, dateOfBirth);
     }
@@ -15,8 +16,8 @@ public class ReaderImp extends User implements Reader{
 
     @Override
     public void takeBook(int book) {
-        setNumOfBooks(book+this.getNumOfBooks());
-        System.out.format("%s has taken %d book(s)%n",super.getName(),getNumOfBooks());
+        setNumOfBooks(book + this.getNumOfBooks());
+        System.out.format("%s must return %d book(s) to the Library%n", super.getName(), getNumOfBooks());
     }
 
     @Override

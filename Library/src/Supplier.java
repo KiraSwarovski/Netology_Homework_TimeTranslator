@@ -1,3 +1,3 @@
 public interface Supplier {
-    void supplyingBook();
+    void supplyingBook(int book);
 }
