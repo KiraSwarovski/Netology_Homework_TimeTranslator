@@ -12,10 +12,9 @@ public class SupplierImp extends User implements Supplier {
     public void setBook(int numOfBook) {
         this.numOfBook = numOfBook;
     }
-
     @Override
     public void supplyingBook(int book) {
         setBook(book + this.getBook());
-        System.out.format("%s supply %d book(s) to library", super.getName(), getBook());
+        System.out.format("%s supply %d book(s) to library%n", super.getName(), getBook());
     }
 }
