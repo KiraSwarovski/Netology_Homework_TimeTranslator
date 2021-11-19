@@ -5,6 +5,10 @@ public class SupplierImp extends User implements Supplier {
         super(name, dateOfBirth);
     }
 
+    public SupplierImp(){
+        super("Lenin",1870);
+    }
+
     public int getBook() {
         return numOfBook;
     }
@@ -15,7 +19,7 @@ public class SupplierImp extends User implements Supplier {
 
     @Override
     public void supplyingBook(int book) {
-        setBook(book + this.getBook());
-        System.out.format("%s supply %d book(s) to library", super.getName(), getBook());
+    numOfBook+=book;
+        System.out.format("%s supply %d book(s) to library%n", super.getName(), getBook());
     }
 }
