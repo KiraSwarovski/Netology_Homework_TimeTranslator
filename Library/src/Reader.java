@@ -1,5 +1,7 @@
 public interface Reader {
     void takeBook(int book);
 
-    void returnBook();
+    void returnBook(int book);
+
+    boolean isOverdue();
 }

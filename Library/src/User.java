@@ -15,7 +15,6 @@ public abstract class User {
         return dateOfBirth;
     }
 
-
     @Override
     public String toString() {
         return getName(); //add this. if it run a mistake

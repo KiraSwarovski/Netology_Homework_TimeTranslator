@@ -1,4 +1,4 @@
-public class ReaderImp extends User implements Reader, Supplier  {
+public class ReaderImp extends User implements Reader {
     private int numOfBooks;
 
     public ReaderImp(String name, int dateOfBirth) {
@@ -16,28 +16,24 @@ public class ReaderImp extends User implements Reader, Supplier  {
 
     @Override
     public void takeBook(int book) {
-        setNumOfBooks(book + this.getNumOfBooks());
-//        supplyingBook(getNumOfBooks());
-        System.out.format("%s has taken %s book(s); totally he must return %d book(s) to the Library%n", super.getName(), book,getNumOfBooks());
+        numOfBooks += book;
+        SupplierImp supplierImp = new SupplierImp(getName(), getDateOfBirth());
+        supplierImp.setBookSubstract(book);
+        System.out.format("%s has taken %s book(s); totally he must return %d book(s) to the Library%n", super.getName(), book, getNumOfBooks());
     }
 
     @Override
-    public void returnBook() {
-
+    public void returnBook(int book) {
+        numOfBooks -= book;
+        SupplierImp supplierImp = new SupplierImp(getName(), getDateOfBirth());
+        supplierImp.setBookSum(book);
+        System.out.format("%s has returned %s book(s); totally he must return %d book(s) to the Library%n", super.getName(), book, getNumOfBooks());
     }
 
     @Override
-    public void supplyingBook(int book) {
-        SupplierImp supplierImp = new SupplierImp(getName(),getDateOfBirth());
-        int subBook = -book;
-        supplierImp.setBook(subBook);
-    }
-
-
-    //       @Override
-//    public void supplyingBook(int numOfBooks) {
-//        Supplier readerForSubstractBook = new SupplierImp(getName(),getDateOfBirth());
-//        readerForSubstractBook.supplyingBook(numOfBooks);
-//    }
+    //TODO ternary operation
+    public boolean isOverdue() {
+        return getNumOfBooks()>0? true:false;
+   }
 
 }
