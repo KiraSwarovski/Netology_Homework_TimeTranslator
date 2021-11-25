@@ -2,6 +2,9 @@ public abstract class Account {
     private int amount;
     private String accountName;
 
+//    protected Account() {
+//    }
+
     public int getAmount() {
         return amount;
     }

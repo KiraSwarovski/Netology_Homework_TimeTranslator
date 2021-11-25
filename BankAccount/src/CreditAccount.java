@@ -1,7 +1,15 @@
 public class CreditAccount extends Account {
+    private String accountName;
+    private int amount;
+
     public CreditAccount(int amount, String accountName) {
         super(amount, accountName);
     }
+//
+//    public void Account2(int amount, String accountName) {
+//        this.amount = amount;
+//        this.accountName = accountName;
+//    }
 
     @Override
     void pay(int amount) {
@@ -32,7 +40,10 @@ public class CreditAccount extends Account {
                             "%d $ for return%n",
                     -thisTempAmount, getAccountName(),
                     thisTempAmount, getAmount(), freeMoney);
-        //    super.setAmount(super.getAmount()+freeMoney);
+            //    super.setAmount(super.getAmount()+freeMoney);
+//            Account2(1, getAccountName());
+            CheckingAccount checkingAccount = new CheckingAccount(freeMoney, "checkingAccount");
+            checkingAccount.addMoney(freeMoney);
         } else {
             int thisTempAmount = getAmount();
             setAmount(getAmount() + amount);
