@@ -28,7 +28,8 @@ public abstract class Account {
         this.setAmount(getAmount() - amount);
     }
 
-    void addMoney(int amount) {
+    int addMoney(int amount) {
         setAmount(getAmount() + amount);
+        return 0;
     }
 }

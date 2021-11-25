@@ -21,7 +21,7 @@ public class CreditAccount extends Account {
     }
 
     @Override
-    void addMoney(int amount) {
+    int addMoney(int amount) {
         if ((getAmount() + amount) > 0) {
             int thisTempAmount = getAmount();
             System.out.printf("%s's can't be positives%n",
@@ -32,12 +32,13 @@ public class CreditAccount extends Account {
                             "%d $ for return%n",
                     -thisTempAmount, getAccountName(),
                     thisTempAmount, getAmount(), freeMoney);
-        //    super.setAmount(super.getAmount()+freeMoney);
+            return getAmount(super.addMoney(11));
         } else {
             int thisTempAmount = getAmount();
             setAmount(getAmount() + amount);
             System.out.printf("%d $ settled an %s; %d $-> %d $ %n",
                     amount, getAccountName(), thisTempAmount, getAmount());
         }
+        return 0;
     }
 }

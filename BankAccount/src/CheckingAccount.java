@@ -27,10 +27,11 @@ public class CheckingAccount extends Account {
     }
 
     @Override
-    void addMoney(int amount) {
+    int addMoney(int amount) {
         int thisTempAmount = getAmount();
         setAmount(getAmount() + amount);
         System.out.printf("%d $ settled an %s; %d $-> %d $ %n",
                 amount, getAccountName(), thisTempAmount, getAmount());
+        return 0;
     }
 }
