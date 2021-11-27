@@ -9,9 +9,6 @@ public class ReaderImp extends User implements Reader {
         return numOfBooks;
     }
 
-    public void setNumOfBooks(int numOfBooks) {
-        this.numOfBooks = numOfBooks;
-    }
 
 
     @Override

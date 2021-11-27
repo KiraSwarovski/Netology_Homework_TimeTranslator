@@ -1,6 +1,6 @@
 public interface Administrator {
 
-    public void findBooks();
+     void findBooks();
 
-    public void delayNotice(Reader reader);
+     void delayNotice(Reader reader);
 }

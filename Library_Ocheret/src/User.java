@@ -1,10 +1,10 @@
 public abstract class User {
     private String name;
-    private int age;
+    private int dateOfBirth;
 
-    protected User(String name, int age) {
+    protected User(String name, int dateOfBirth) {
         this.setName(name);
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getName() {

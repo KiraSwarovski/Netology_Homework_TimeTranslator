@@ -18,19 +18,25 @@ public class CheckingAccount extends Account {
     void transfer(Account account, int amount) {
         if ((getAmount() - amount) < 0) System.out.println("Not enough money");
         else {
-            int thisTempAmount = getAmount();
-            setAmount(getAmount() - amount);
-            System.out.printf("%d $ marked off %s; %d $-> %d $ %n",
-                    amount, getAccountName(), thisTempAmount, getAmount());
-            account.addMoney(amount);
+            if (account.addMoney(amount) == true) {
+                int thisTempAmount = getAmount();
+                setAmount(getAmount() - amount);
+                System.out.printf("%d $ marked off %s; %d $-> %d $ %n",
+                        amount, getAccountName(), thisTempAmount, getAmount());
+                account.addMoney(amount);
+            } else {
+                System.out.println("No way");
+//                System.out.printf("no possibly transfer money to %s ", account.getAccountName());
+            }
         }
     }
 
     @Override
-    void addMoney(int amount) {
+    boolean addMoney(int amount) {
         int thisTempAmount = getAmount();
         setAmount(getAmount() + amount);
         System.out.printf("%d $ settled an %s; %d $-> %d $ %n",
                 amount, getAccountName(), thisTempAmount, getAmount());
+        return true;
     }
 }

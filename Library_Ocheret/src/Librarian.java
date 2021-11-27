@@ -1,5 +1,5 @@
 public interface Librarian {
 
-    public void orderBooks(Supplier supplier);
+     void orderBooks(Supplier supplier);
 
 }
