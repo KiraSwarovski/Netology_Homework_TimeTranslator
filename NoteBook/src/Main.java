@@ -3,12 +3,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static ArrayList<String> listOfTasks = new ArrayList<>();
-
     public static void main(String[] args) {
+        ArrayList<String> listOfTasks = new ArrayList<>();
         Scanner scannerInt = new Scanner(System.in);
-        Scanner scannerString = new Scanner(System.in);
-        int chooseAction = 0;
+        int chooseAction;
         String s = "";
         while (!"0".equals(s)) {
             printAction();
@@ -22,24 +20,44 @@ public class Main {
 
             switch (chooseAction) {
                 case 1:
-                    printForSetTask();
-                    addTask()
-//                    String task = scannerString.nextLine();
-//                    listOfTasks.add(task);
+                    System.out.println("Enter the task to schedule:");
+                    listOfTasks = addTask(listOfTasks);
                     break;
                 case 2:
-                    displayListOfTasks(Main.listOfTasks);
+                    displayListOfTasks(listOfTasks);
                     break;
                 case 3:
-                    deleteTheTask();
-                case 0:
+                    listOfTasks = deleteTheTask(listOfTasks);
+                    break;
+
+                default:
+                    System.out.println("Choose other option");
                     break;
             }
         }
     }
 
-    private static void deleteTheTask() {
+    private static ArrayList<String>  deleteTheTask(ArrayList<String> oldList) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> listCut = new ArrayList<>(oldList);
+        String s = "";
+        int chooseRemoveIndex;
+        while (true){
+            System.out.println("Enter the task to remove from schedule:");
+            s = scanner.next();
+            if(!"Finish".equals(s)){
+                try {
+                    chooseRemoveIndex = Integer.parseInt(s)-1;
+                } catch (NumberFormatException e) {
+                    System.out.println("Index is a number. Please choose index of Array, not a Value. \n");
+                    continue;
+                }
+                listCut.remove(chooseRemoveIndex);
+            }
+            else break;
+        }
 
+        return listCut;
     }
 
     private static void displayListOfTasks(ArrayList<String> list) {
@@ -49,7 +67,7 @@ public class Main {
         System.out.println();
     }
 
-    public static ArrayList<String> addTask(ArrayList<String> oldList) {
+    private static ArrayList<String> addTask(ArrayList<String> oldList) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> listNewAdd = new ArrayList<>(oldList);
         String task = scanner.nextLine();
@@ -64,7 +82,5 @@ public class Main {
                 "0. Exit\n");
     }
 
-    private static void printForSetTask() {
-        System.out.println("Enter the task to schedule:");
-    }
+
 }
