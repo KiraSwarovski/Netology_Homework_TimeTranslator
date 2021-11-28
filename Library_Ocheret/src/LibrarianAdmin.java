@@ -1,23 +1,23 @@
 public class LibrarianAdmin extends User implements Librarian, Administrator {
 
-    public LibrarianAdmin(String name, int age) {
-        super(name, age);
+    public LibrarianAdmin(String name, int dateOfBirth) {
+        super(name, dateOfBirth);
     }
 
-    @Override //Librarian
+    @Override
     public void orderBooks(Supplier supplier) {
-        System.out.println("Librarian " + this.getName() +
-                " ordered new books from supplier " + supplier.toString());
+        System.out.printf(
+                "%s ordered new books from supplier %n", this.getName(), supplier.toString());
     }
 
-    @Override //administrator
+    @Override
     public void findBooks() {
-        System.out.println(this.getName() + " found books");
+        System.out.printf("%s found books%n", this.getName());
     }
 
-    @Override //administrator
+    @Override
     public void delayNotice(Reader reader) {
         //TODO add boolean value
-        System.out.println("Reader " + reader.toString() + " have delayed books");
+        System.out.printf("Reader %s have delayed books%n", reader.toString());
     }
 }

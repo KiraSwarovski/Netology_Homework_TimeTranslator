@@ -2,9 +2,6 @@ public abstract class Account {
     private int amount;
     private String accountName;
 
-//    protected Account() {
-//    }
-
     public int getAmount() {
         return amount;
     }
@@ -31,8 +28,8 @@ public abstract class Account {
         this.setAmount(getAmount() - amount);
     }
 
-    int addMoney(int amount) {
+    boolean addMoney(int amount) {
         setAmount(getAmount() + amount);
-        return 0;
+        return true;
     }
 }

@@ -9,21 +9,21 @@ public class ReaderImpl extends User implements Reader {
         this.numBooks = num;
     }
 
-    public ReaderImpl(String name, int age) {
-        super(name, age);
+    public ReaderImpl(String name, int dateOfBirth) {
+        super(name, dateOfBirth);
     }
 
     @Override
     public void pickUpBooks(int num) {
         this.setNumBooks(this.getNumBooks() + num);
-        System.out.println("Reader "+this.getName()+" picked up "+num+
-                " book(s) from the library. He now has "+this.getNumBooks());
+        System.out.printf("%s Reader  %d picked up  book(s) from the library. He now has %s%n",
+                this.getName(), num, this.getNumBooks());
     }
 
     @Override
     public void dropOffBooks(int num) {
         this.setNumBooks(this.getNumBooks() - num);
-        System.out.println(this.getName() + " returned " + num
-                + " book(s) in the library. He now has " + this.getNumBooks() + " more") ;
+        System.out.printf("%s returned %d book(s) in the library. He now has %s more%n",
+                this.getName(), num, this.getNumBooks());
     }
 }

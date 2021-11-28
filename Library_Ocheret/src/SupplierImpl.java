@@ -1,11 +1,11 @@
 public class SupplierImpl extends User implements Supplier {
 
-    public SupplierImpl(String name, int age) {
-        super(name, age);
+    public SupplierImpl(String name, int dateOfBirth) {
+        super(name, dateOfBirth);
     }
 
     @Override
     public void bringBooks() {
-        System.out.println("Supplier " + this.getName() + " brings new books");
+        System.out.printf("Supplier  brings new books%n", this.getName());
     }
 }

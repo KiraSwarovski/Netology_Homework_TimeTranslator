@@ -1,7 +1,7 @@
 public interface Reader {
 
-    public void pickUpBooks(int num);
+     void pickUpBooks(int num);
 
-    public void dropOffBooks(int num);
+     void dropOffBooks(int num);
 
 }

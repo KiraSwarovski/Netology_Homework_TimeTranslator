@@ -1,9 +1,9 @@
 public class Main {
 
     public static void main(String[] args) {
-        LibrarianAdmin librarianAdmin = new LibrarianAdmin("Vasilisa", 55);
-        Reader studentReader = new ReaderImpl("Mikhail", 20);
-        Supplier supplier = new SupplierImpl ("Georgy", 40);
+        LibrarianAdmin librarianAdmin = new LibrarianAdmin("Ksenia", 1993);
+        Reader studentReader = new ReaderImpl("Reader1", 1995);
+        Supplier supplier = new SupplierImpl ("Supplier1", 1991);
 
         librarianAdmin.orderBooks(supplier);
         librarianAdmin.findBooks();
