@@ -25,8 +25,7 @@ public class CheckingAccount extends Account {
                         amount, getAccountName(), thisTempAmount, getAmount());
                 account.addMoney(amount);
             } else {
-                System.out.println("No way");
-//                System.out.printf("no possibly transfer money to %s ", account.getAccountName());
+                System.out.println("Operation is restricted");
             }
         }
     }

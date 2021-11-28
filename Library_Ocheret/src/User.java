@@ -2,7 +2,7 @@ public abstract class User {
     private String name;
     private int dateOfBirth;
 
-    protected User(String name, int dateOfBirth) {
+     User(String name, int dateOfBirth) {
         this.setName(name);
         this.dateOfBirth = dateOfBirth;
     }

@@ -6,6 +6,6 @@ public class SupplierImpl extends User implements Supplier {
 
     @Override
     public void bringBooks() {
-        System.out.printf("Supplier  brings new books%n",this.getName());
+        System.out.printf("Supplier  brings new books%n", this.getName());
     }
 }

@@ -13,9 +13,8 @@ public class SavingsAccount extends Account {
                 System.out.printf("%d $ marked off %s; %d $-> %d $ %n",
                         amount, getAccountName(), thisTempAmount, getAmount());
                 account.addMoney(amount);
-            }else {
-                System.out.println("No way");
-//                System.out.printf("no possibly transfer money to %s ", account.getAccountName());
+            } else {
+                System.out.println("Operation is restricted");
             }
         }
     }

@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/Library/Library.iml" filepath="$PROJECT_DIR$/Library/Library.iml" />
       <module fileurl="file://$PROJECT_DIR$/Library_Ocheret/Library_Ocheret.iml" filepath="$PROJECT_DIR$/Library_Ocheret/Library_Ocheret.iml" />
       <module fileurl="file://$PROJECT_DIR$/Netology_Homework.iml" filepath="$PROJECT_DIR$/Netology_Homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NoteBook/NoteBook.iml" filepath="$PROJECT_DIR$/NoteBook/NoteBook.iml" />
       <module fileurl="file://$PROJECT_DIR$/Online Reader/Online Reader.iml" filepath="$PROJECT_DIR$/Online Reader/Online Reader.iml" />
       <module fileurl="file://$PROJECT_DIR$/PapontMamontPolymorphism/PapontMamontPolymorphism.iml" filepath="$PROJECT_DIR$/PapontMamontPolymorphism/PapontMamontPolymorphism.iml" />
       <module fileurl="file://$PROJECT_DIR$/Quick Sort Ocheretnaya/Quick Sort Ocheretnaya.iml" filepath="$PROJECT_DIR$/Quick Sort Ocheretnaya/Quick Sort Ocheretnaya.iml" />
@@ -25,6 +26,7 @@
       <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/TimeTranslator/TimeTranslator.iml" filepath="$PROJECT_DIR$/TimeTranslator/TimeTranslator.iml" />
       <module fileurl="file://$PROJECT_DIR$/TryBattleShip/TryBattleShip.iml" filepath="$PROJECT_DIR$/TryBattleShip/TryBattleShip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TryNullOnArrayList/TryNullOnArrayList.iml" filepath="$PROJECT_DIR$/TryNullOnArrayList/TryNullOnArrayList.iml" />
       <module fileurl="file://$PROJECT_DIR$/Validation of read events/Validation of read events.iml" filepath="$PROJECT_DIR$/Validation of read events/Validation of read events.iml" />
       <module fileurl="file://$PROJECT_DIR$/YellowgreenRemarkableRom/YellowgreenRemarkableRom.iml" filepath="$PROJECT_DIR$/YellowgreenRemarkableRom/YellowgreenRemarkableRom.iml" />
       <module fileurl="file://$PROJECT_DIR$/thisVsSuper/thisVsSuper.iml" filepath="$PROJECT_DIR$/thisVsSuper/thisVsSuper.iml" />
