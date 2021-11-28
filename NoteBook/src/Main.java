@@ -1,11 +1,13 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    public static ArrayList<String> listOfTasks = new ArrayList<>();
+
     public static void main(String[] args) {
         Scanner scannerInt = new Scanner(System.in);
         Scanner scannerString = new Scanner(System.in);
-        ArrayList<String> listOfTasks = new ArrayList<>();
         int chooseAction = 0;
         String s = "";
         while (!"0".equals(s)) {
@@ -21,18 +23,13 @@ public class Main {
             switch (chooseAction) {
                 case 1:
                     printForSetTask();
-                    String task = scannerString.nextLine();
-                    listOfTasks.add(task);
-                    for (int i = 0; i < listOfTasks.size(); i++) {
-                        System.out.printf("%d. %s\n", i + 1, listOfTasks.get(i));
-                    }
+                    addTask()
+//                    String task = scannerString.nextLine();
+//                    listOfTasks.add(task);
+                    break;
                 case 2:
-                    System.out.println("Display list: ");
-                    for (int i = 0; i < listOfTasks.size(); i++) {
-                        System.out.printf("%d. %s\n", i + 1, listOfTasks.get(i));
-                    }
-                    System.out.println();
-                    displayListOfTasks(listOfTasks);
+                    displayListOfTasks(Main.listOfTasks);
+                    break;
                 case 3:
                     deleteTheTask();
                 case 0:
@@ -52,8 +49,12 @@ public class Main {
         System.out.println();
     }
 
-    private static void addTask() {
-
+    public static ArrayList<String> addTask(ArrayList<String> oldList) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> listNewAdd = new ArrayList<>(oldList);
+        String task = scanner.nextLine();
+        listNewAdd.add(task);
+        return listNewAdd;
     }
 
     private static void printAction() {
