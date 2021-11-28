@@ -11,7 +11,9 @@ public class User {
         this.age = age;
     }
 
-    public String getLogin() { return login; }
+    public String getLogin() {
+        return login;
+    }
 
     public String getPassword() {
         return password;
