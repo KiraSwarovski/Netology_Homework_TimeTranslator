@@ -63,11 +63,9 @@ public class Main {
 
     private static void displayListOfTasks(ArrayList<String> list) {
         System.out.println("Tasks from schedule: ");
-        int count=0;
         Iterator<String> iter = list.iterator();
         while (iter.hasNext()){
-            count++;
-            System.out.println(count+". "+iter.next());
+            System.out.println(list.indexOf(iter.next())+". "+iter.next());
         }
         System.out.println();
     }
