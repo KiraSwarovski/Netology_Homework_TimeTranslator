@@ -21,7 +21,7 @@ public class Main {
 
             switch (chooseAction) {
                 case 1:
-                    System.out.println("Enter the task to schedule:");
+                    System.out.println("Enter the tasks to schedule:");
                     listOfTasks = addTask(listOfTasks);
                     break;
                 case 2:
