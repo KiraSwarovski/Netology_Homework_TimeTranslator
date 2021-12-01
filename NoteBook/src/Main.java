@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -63,8 +62,8 @@ public class Main {
     private static void displayListOfTasks(ArrayList<String> list) {
         System.out.println("Tasks from schedule: ");
         Iterator<String> iter = list.iterator();
-        while (iter.hasNext()){
-            System.out.println(list.indexOf(iter.next())+". "+iter.next());
+        while (iter.hasNext()) {
+            System.out.println(list.indexOf(iter.next()) + ". " + iter.next());
         }
         System.out.println();
     }
