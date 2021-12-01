@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         ArrayList<Employee> arrayEmployee = new ArrayList();
         arrayEmployee = inputEmpData(arrayEmployee);
@@ -36,7 +37,7 @@ public class Main {
     }
 
     public static void printArrEmp(ArrayList<Employee> arrPrint) {
-        for (Employee emp:arrPrint) {
+        for (Employee emp : arrPrint) {
             System.out.println(emp.toString());
         }
     }
@@ -61,11 +62,16 @@ public class Main {
         }
         return oldArr;
     }
-    static int searchBySurname(String surname, String name, List<Employee> employeeList){
 
+    static int searchBySurname(String surname, String name, List<Employee> employeeList) {
+        int returnTF = -1;
         for (int i = 0; i < employeeList.size(); i++) {
-
+            Employee employee = employeeList.get(i);
+            if (surname.equalsIgnoreCase(employee.getSurname())&&
+                   name.equalsIgnoreCase(employee.getName())) {
+                returnTF = i;
+            }
         }
-        return -1;
+        return returnTF;
     }
 }
