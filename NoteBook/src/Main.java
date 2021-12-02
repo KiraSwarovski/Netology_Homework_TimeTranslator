@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
@@ -28,6 +28,7 @@ public class Main {
                     break;
                 case 3:
                     listOfTasks = deleteTheTask(listOfTasks);
+                    displayListOfTasks(listOfTasks);
                     break;
 
                 default:
@@ -40,7 +41,7 @@ public class Main {
     private static ArrayList<String> deleteTheTask(ArrayList<String> oldList) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> listCut = new ArrayList<>(oldList);
-        String s = "";
+        String s;
         int chooseRemoveIndex;
         while (true) {
             System.out.println("Enter the task to remove from schedule:");
@@ -55,13 +56,14 @@ public class Main {
                 listCut.remove(chooseRemoveIndex);
             } else break;
         }
-
         return listCut;
     }
 
     private static void displayListOfTasks(ArrayList<String> list) {
-        for (int i = 0; i < list.size(); i++) {
-            System.out.printf("%d. %s\n", i + 1, list.get(i));
+        System.out.println("Tasks from schedule: ");
+        Iterator<String> iter = list.iterator();
+        while (iter.hasNext()) {
+            System.out.println(list.indexOf(iter.next()) + ". " + iter.next());
         }
         System.out.println();
     }
@@ -83,11 +85,10 @@ public class Main {
     }
 
     private static void printAction() {
-        System.out.println("1. Add a task\n" +
+        System.out.println("Choose below option:\n" +
+                "1. Add a task\n" +
                 "2. Display a list of tasks\n" +
                 "3. Delete the task\n" +
                 "0. Exit\n");
     }
-
-
 }
