@@ -48,7 +48,7 @@ public class Main {
     public static ArrayList<Employee> changeAttributes(ArrayList<Employee> oldArr) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println(" If not you wanna change info - press any key"+
+            System.out.println(" If not you wanna change info - press any key. "+
                     "If you don't wanna change employee info, enter end.");
             String input = scanner.next();
             if ("end".equalsIgnoreCase(input)) {
@@ -61,24 +61,6 @@ public class Main {
 
             int empIndex = searchBySurname(surname, name, oldArr);
             if (empIndex != -1) {
-                System.out.println("Per");
-//                switch (chooseAction) {
-//                    case 1:
-//                        System.out.println("Enter the tasks to schedule:");
-//                        listOfTasks = addTask(listOfTasks);
-//                        break;
-//                    case 2:
-//                        displayListOfTasks(listOfTasks);
-//                        break;
-//                    case 3:
-//                        listOfTasks = deleteTheTask(listOfTasks);
-//                        displayListOfTasks(listOfTasks);
-//                        break;
-//
-//                    default:
-//                        System.out.println("Goodbye");
-//                        break;
-//                }
                 Employee employee = oldArr.get(empIndex);
                 System.out.printf("Employer %s %s has found\n", employee.getSurname(), employee.getName());
                 System.out.printf("Type YES, if you wanna change %s\n", employee.getSurname());
