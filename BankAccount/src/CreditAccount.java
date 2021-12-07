@@ -16,11 +16,14 @@ public class CreditAccount extends Account {
 
     @Override
     void transfer(Account account, int amount) {
-        int thisTempAmount = getAmount();
-        setAmount(getAmount() - amount);
-        System.out.printf("%d $ marked off %s; %d $-> %d $ %n",
-                amount, getAccountName(), thisTempAmount, getAmount());
-        account.addMoney(amount);
+        if (account.addMoney(amount) == true) {
+            int thisTempAmount = getAmount();
+            setAmount(getAmount() - amount);
+            System.out.printf("%d $ marked off %s; %d $-> %d $ %n",
+                    amount, getAccountName(), thisTempAmount, getAmount());
+        } else {
+            System.out.println("Operation is restricted");
+        }
     }
 
     @Override

@@ -1,16 +1,14 @@
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> listOfTasks = new ArrayList<>();
-        Scanner scannerInt = new Scanner(System.in);
+        NotePad notePad = new NotePad();
+        Scanner scanner = new Scanner(System.in);
         int chooseAction;
         String s = "";
         while (!"0".equals(s)) {
             printAction();
-            s = scannerInt.next();
+            s = scanner.next();
             try {
                 chooseAction = Integer.parseInt(s);
             } catch (NumberFormatException e) {
@@ -20,71 +18,48 @@ public class Main {
 
             switch (chooseAction) {
                 case 1:
-                    System.out.println("Enter the tasks to schedule:");
-                    listOfTasks = addTask(listOfTasks);
+                    String task = "";
+                    while (true) {
+                        System.out.println("Enter the new task to add to schedule: \n" +
+                                "enter 'end' for exit");
+                        task = scanner.next();
+                        if ("end".equals(task)) {
+                            break;
+                        } else {
+                            notePad.addTask(task);
+                        }
+                        notePad.displayListOfTasks();
+                    }
                     break;
                 case 2:
-                    displayListOfTasks(listOfTasks);
+                    notePad.displayListOfTasks();
                     break;
                 case 3:
-                    listOfTasks = deleteTheTask(listOfTasks);
-                    displayListOfTasks(listOfTasks);
-                    break;
-
+                    int chooseRemoveIndex;
+                    while (true) {
+                        System.out.println("Enter the task to remove from schedule: \n" +
+                                " For exit enter 'Finish'");
+                        s = scanner.next();
+                        if (!"Finish".equalsIgnoreCase(s)) {
+                            try {
+                                chooseRemoveIndex = Integer.parseInt(s) - 1;
+                            } catch (NumberFormatException e) {
+                                System.out.println("Index should be a number. Please choose index of Array, not a String value. \n");
+                                continue;
+                            }
+                            notePad.deleteTask(chooseRemoveIndex);
+                            notePad.displayListOfTasks();
+                        } else break;
+                        break;
+                    }
                 default:
-                    System.out.println("Goodbye");
                     break;
             }
         }
+        System.out.println("Goodbye");
     }
 
-    private static ArrayList<String> deleteTheTask(ArrayList<String> oldList) {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<String> listCut = new ArrayList<>(oldList);
-        String s;
-        int chooseRemoveIndex;
-        while (true) {
-            System.out.println("Enter the task to remove from schedule:");
-            s = scanner.next();
-            if (!"Finish".equals(s)) {
-                try {
-                    chooseRemoveIndex = Integer.parseInt(s) - 1;
-                } catch (NumberFormatException e) {
-                    System.out.println("Index is a number. Please choose index of Array, not a Value. \n");
-                    continue;
-                }
-                listCut.remove(chooseRemoveIndex);
-            } else break;
-        }
-        return listCut;
-    }
-
-    private static void displayListOfTasks(ArrayList<String> list) {
-        System.out.println("Tasks from schedule: ");
-        Iterator<String> iter = list.iterator();
-        while (iter.hasNext()) {
-            System.out.println(list.indexOf(iter.next()) + ". " + iter.next());
-        }
-        System.out.println();
-    }
-
-    private static ArrayList<String> addTask(ArrayList<String> oldList) {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<String> listNewAdd = new ArrayList<>(oldList);
-        String task = "";
-        while (true) {
-            task = scanner.nextLine();
-            if ("end".equals(task)) {
-                break;
-            } else {
-                listNewAdd.add(task);
-            }
-        }
-        displayListOfTasks(listNewAdd);
-        return listNewAdd;
-    }
-
-    private static void printAction() {
+    static void printAction() {
         System.out.println("Choose below option:\n" +
                 "1. Add a task\n" +
                 "2. Display a list of tasks\n" +
@@ -92,3 +67,4 @@ public class Main {
                 "0. Exit\n");
     }
 }
+

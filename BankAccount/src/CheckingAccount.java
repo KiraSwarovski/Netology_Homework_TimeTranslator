@@ -23,7 +23,6 @@ public class CheckingAccount extends Account {
                 setAmount(getAmount() - amount);
                 System.out.printf("%d $ marked off %s; %d $-> %d $ %n",
                         amount, getAccountName(), thisTempAmount, getAmount());
-//                account.addMoney(amount);
             } else {
                 System.out.println("Operation is restricted");
             }
