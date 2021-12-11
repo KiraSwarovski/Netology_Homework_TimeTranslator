@@ -23,7 +23,7 @@ public class PhoneBook {
     public void addContactToGroup(Contact newContact, String[] groupNames) {
         for (String groupName : groupNames) {
             if (groups.containsKey(groupName)) {
-                LinkedList<Contact>  groupContacts = groups.get(groupName);
+                LinkedList<Contact>  groupContacts = null;
                 groupContacts.add(newContact);
             } else {
                 System.out.println("!!! Such a group '" + groupName + "' doesn't exist !!!");
