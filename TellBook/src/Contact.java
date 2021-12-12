@@ -1,4 +1,4 @@
-public class Contact {
+public class Contact{
     private String name;
     private String telNumber;
 
@@ -7,18 +7,22 @@ public class Contact {
         this.telNumber = telNumber;
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
+    public String getName() {
+        return name;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
+//    @Override
+//    public int hashCode() {
+//        return super.hashCode();
+//    }
+//
+//    @Override
+//    public boolean equals(Object obj) {
+//        return super.equals(obj);
+//    }
 
     @Override
     public String toString() {
-        return name + telNumber;
+        return name + " "+telNumber;
     }
 }

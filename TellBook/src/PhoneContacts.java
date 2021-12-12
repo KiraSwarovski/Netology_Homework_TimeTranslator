@@ -22,8 +22,8 @@ public class PhoneContacts {
     public void addContact(Contact contact, String[] contactsInfo) {
         for (String checkName : contactsInfo) {
             if (listOfContacts.containsKey(checkName)) {
-                LinkedList<Contact> infoContact = new LinkedList<>();
-                infoContact.add(contact);
+//                LinkedList<Contact> infoContact = new LinkedList<>();
+//                infoContact.add(contact);
                 listOfContacts.get(checkName).add(contact);
             } else {
                 System.out.println("This group doesn't exist");
@@ -32,18 +32,6 @@ public class PhoneContacts {
     }
 
     public void displayContacts() {
-//        if (listOfContacts.isEmpty()) {
-//            System.out.println("Empty List");
-//        } else {
-//            for (Map.Entry<String, LinkedList<Contact>> entry : listOfContacts.entrySet()) {
-//                String key = entry.getKey();
-//                LinkedList<Contact> value = entry.getValue();
-//                System.out.println(key);
-//                for (Contact contact : value) {
-//                    System.out.println(contact.toString());
-//                }
-//            }
-//        }
         if (listOfContacts.isEmpty()) {
             System.out.println("Phone Book is empty");
         } else {
