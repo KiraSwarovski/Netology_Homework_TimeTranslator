@@ -1,32 +1,57 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        addContact();
-        addGroup();
-    }
-
-    private static void addGroup() {
         PhoneContacts phoneContacts = new PhoneContacts();
-        Scanner scanner = new Scanner(System.in);
-        String s = "";
-        while (!"end".equals(s)) {
-            System.out.println("Write group's name for add");
-            s = scanner.next();
-            phoneContacts.addGroup(s);
-        }
+        addGroup(phoneContacts);
+        phoneContacts.displayContacts();
+        addContact(phoneContacts);
         phoneContacts.displayContacts();
     }
 
-    private static void addContact() {
-        PhoneContacts phoneContacts = new PhoneContacts();
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("Write list of groups");
-            String group = scanner.nextLine();
-            String[] groups = group.split(" ");
-            System.out.println("Write full name of Contact and his mobile number");
+    private static void addGroup(PhoneContacts phoneContacts) {
+//        Scanner scanner = new Scanner(System.in);
+//        String s = "";
+//        while (!"end".equals(s)) {
+//            System.out.println("Write group's name for add");
+//            s = scanner.next();
+//            if ("end".equals(s)) {
+//                break;
+//            }
+//            phoneContacts.addGroup(s);
+//        }
+        phoneContacts.addGroup("Sport");
+        phoneContacts.addGroup("Work");
+        phoneContacts.addGroup("Mafia");
+    }
 
-        }
+    private static void addContact(PhoneContacts phoneContacts) {
+//        Scanner scanner = new Scanner(System.in);
+//        String inputGroup = "";
+//        String inputContact = "";
+//        while (!"end".equals(inputGroup)) {
+        System.out.println("Write lists of groups (Could be more than 1). For exit enter 'end'.");
+//            inputGroup = scanner.nextLine();
+//            if ("end".equals(inputGroup)) {
+//                break;
+//            }
+//            String[] groups = inputGroup.split(" ");
+        String[] groups = {"Sport", "Mafia"};
+        phoneContacts.displayContacts();
+        System.out.println("Write name of Contact" +
+                " and his mobile number");
+//            inputContact = scanner.nextLine();
+//            String[] contactBIO = inputContact.split(" ");
+//            Contact contact;
+//            if (contactBIO.length == 2) {
+        Contact contact = new Contact("Valerka", "8-800-555..");
+//            } else {
+//                System.out.println("Try again. Should be name a phone number");
+//                continue;
+//            }
+        phoneContacts.addContact(contact, groups);
+
     }
 }
+

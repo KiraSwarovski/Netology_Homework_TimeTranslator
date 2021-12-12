@@ -2,6 +2,11 @@ public class Contact {
     private String name;
     private String telNumber;
 
+    public Contact(String name, String telNumber) {
+        this.name = name;
+        this.telNumber = telNumber;
+    }
+
     @Override
     public int hashCode() {
         return super.hashCode();
@@ -14,6 +19,6 @@ public class Contact {
 
     @Override
     public String toString() {
-        return super.toString();
+        return name + telNumber;
     }
 }
