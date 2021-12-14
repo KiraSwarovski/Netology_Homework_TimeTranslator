@@ -1,8 +1,8 @@
 public interface Reader {
 
-      void  pickUpBooks(int num);
+    void  pickUpBooks(Reader reader);
 
 
-     void dropOffBooks(int num);
+     void dropOffBooks(Reader reader);
 
 }

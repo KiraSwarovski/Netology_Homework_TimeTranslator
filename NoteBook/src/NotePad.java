@@ -9,9 +9,8 @@ public class NotePad {
 
     public void displayListOfTasks() {
         System.out.println("Tasks from schedule: ");
-        int i = 0;
-        for (String value : listOfTasks) {
-            System.out.println(++i + ". " + value);
+        for (int i = 0; i < listOfTasks.size(); i++) {
+            System.out.println((i+1)+". "+listOfTasks.get(i));
         }
     }
 

@@ -14,16 +14,16 @@ public class ReaderImpl extends User implements Reader {
     }
 
     @Override
-    public void pickUpBooks(int num) {
-        this.setNumBooks(this.getNumBooks() + num);
-        System.out.printf("%s Reader  %d picked up  book(s) from the library. He now has %s%n",
-                this.getName(), num, this.getNumBooks());
+    public void pickUpBooks(Reader reader) {
+        this.setNumBooks(this.getNumBooks() + 1);
+        System.out.printf("%s picked %d book(s) from the library. He now has %s%n",
+                this.getName(), 1, this.getNumBooks());
     }
 
     @Override
-    public void dropOffBooks(int num) {
-        this.setNumBooks(this.getNumBooks() - num);
-        System.out.printf("%s returned %d book(s) in the library. He now has %s more%n",
-                this.getName(), num, this.getNumBooks());
+    public void dropOffBooks(Reader reader) {
+        this.setNumBooks(this.getNumBooks() - 1);
+        System.out.printf("%s returned %d book(s) in the library. He now has %s %n",
+                this.getName(), 1, this.getNumBooks());
     }
 }

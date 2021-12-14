@@ -47,7 +47,6 @@ public class Main {
                 continue;
             }
             phoneContacts.addContact(contact, groups);
-
         }
     }
 }

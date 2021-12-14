@@ -1,7 +1,8 @@
 import java.util.*;
+import java.util.Collections;
 
 public class PhoneContacts {
-    private HashMap<String, LinkedList<Contact>> listOfContacts = new HashMap<>();
+    private Map<String, LinkedList<Contact>> listOfContacts = new HashMap<>();
 
     public PhoneContacts() {
         this.listOfContacts = new HashMap<String, LinkedList<Contact>>();
@@ -20,11 +21,14 @@ public class PhoneContacts {
     }
 
     public void addContact(Contact contact, String[] contactsInfo) {
+        Comparable comparable = new Comparable();
         for (String checkName : contactsInfo) {
             if (listOfContacts.containsKey(checkName)) {
 //                LinkedList<Contact> infoContact = new LinkedList<>();
 //                infoContact.add(contact);
-                listOfContacts.get(checkName).add(contact);
+                int indexOf = Math.abs(Collections.binarySearch
+                        (listOfContacts.get(checkName),contact,comparable))-1;
+                  listOfContacts.get(checkName).add(indexOf,contact);
             } else {
                 System.out.println("This group doesn't exist");
             }
@@ -33,15 +37,16 @@ public class PhoneContacts {
 
     public void displayContacts() {
         if (listOfContacts.isEmpty()) {
-            System.out.println("Phone Book is empty");
+            System.out.println("Empty List");
         } else {
-            System.out.println("My Phone Book:");
+            System.out.println("Phone Book:");
             for (Map.Entry<String, LinkedList<Contact>> myGroupsEntry : listOfContacts.entrySet()) {
                 System.out.println(" Group:" + myGroupsEntry.getKey());
-                Iterator it = myGroupsEntry.getValue().iterator();
-                while (it.hasNext()) {
-                    System.out.println(it.next().toString());
-                }
+                System.out.println("People: "+ myGroupsEntry.getValue());
+//                Iterator it = myGroupsEntry.getValue().iterator();
+//                while (it.hasNext()) {
+//                    System.out.println(it.next().toString());
+//                }
             }
         }
     }
