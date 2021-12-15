@@ -1,7 +1,6 @@
 import java.util.Comparator;
 
-public class Comparable implements Comparator<Contact>{
-
+public class Comparable implements Comparator<Contact> {
 
     @Override
     public int compare(Contact o1, Contact o2) {
