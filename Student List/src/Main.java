@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
@@ -13,7 +14,6 @@ public class Main {
         String inputStudentList = "";
         System.out.println("Enter information about the student: \"Full name, group number, student ID number\"");
         while (!"end".equals(inputStudentList)) {
-            System.out.println("Enter information about the student (to complete the program, enter \"end\")");
             inputStudentList = scanner.nextLine();
             String[] studentInfo = inputStudentList.split(",");
             Student student = null;
@@ -25,14 +25,15 @@ public class Main {
                     studentsList.add(student);
                 }
             }
-
+            System.out.println("Enter information about the student (to complete the program, enter \"end\")");
         }
     }
 
     private static void displayStudentsList(HashSet<Student> students) {
-//        HashSet<Student> printStudent = new HashSet<>();
-        for(Student printStudent : students){
-            System.out.println(printStudent.getName()+" "+printStudent.getGroup()+" "+printStudent.getStudentId());
+        System.out.println("Students lists: ");
+        Iterator<Student> iter = students.iterator();
+        while (iter.hasNext()){
+            System.out.println(iter.next());
         }
     }
 }
