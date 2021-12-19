@@ -11,7 +11,7 @@ public class Main {
         student.add("Max");
         Iterator<String> iter = student.iterator();
         while (iter.hasNext()){
-            System.out.println(student.indexOf(student.get())+". "+iter.next());
+//            System.out.println(student.indexOf(student.get())+". "+iter.next());
         }
 
     }

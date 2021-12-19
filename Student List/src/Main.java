@@ -16,7 +16,7 @@ public class Main {
         while (!"end".equals(inputStudentList)) {
             inputStudentList = scanner.nextLine();
             String[] studentInfo = inputStudentList.split(",");
-            Student student = null;
+            Student student;
             if (studentInfo.length == 3) {
                 student = new Student(studentInfo[0], studentInfo[1], studentInfo[2]);
                 if (studentsList.contains(student)) {
