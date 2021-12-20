@@ -5,12 +5,11 @@ import java.util.TreeMap;
 
 public class Main {
     public static void main(String[] args) {
-        Map<String, Contact> contacts = new HashMap<>();
-//        chooseAction(contacts);
+      PhoneContacts phoneContacts = new PhoneContacts();
         Scanner scanner = new Scanner(System.in);
         int chooseAction;
         String input = "";
-        while ("end".equals(input)){
+        while (!"5".equals(input)){
             printAction();
             input = scanner.nextLine();
             try {
@@ -21,19 +20,35 @@ public class Main {
             }
             switch (chooseAction){
                 case 1:
-                    System.out.println("Enter new contact. Write his Name, Surname, Phone number, Group");
+                    System.out.println("Enter new contact.\n" +
+                            " Write his Name, Surname, Phone number, Group separated by 'space'.");
                    Contact contact;
                     String contactBIO = scanner.nextLine();
-                   String[] contactInfo = contactBIO.split(",");
-//                   contact = new Contact(contactInfo[0],contactInfo[1],contactInfo[2],Group.(contactInfo[3]);
+                   String[] contactInfo = contactBIO.split(" ");
+                   if(contactInfo.length==4){
+                       contact = new Contact(contactInfo[0],contactInfo[1],
+                               contactInfo[2],Group.isEqual(contactInfo[3]));
+                       if(phoneContacts.contacts.containsValue(contact)){
+                           System.out.println("This contact exists");
+                       }
+                       else {
+                           phoneContacts.addContact(contactInfo[2],contact);
+                           phoneContacts.displayContacts();
+                       }
+                   }
+                   else {
+                       System.out.println("Write his Name, Surname, Phone number, Group. Try again");
+                       continue;
+                   }
                 case 2:
+                    System.out.println("Add missed call number");
+                    contact.e
                 case 3:
                 case 4:
             }
         }
+        phoneContacts.displayContacts();
         printAction();
-
-
     }
 
 
