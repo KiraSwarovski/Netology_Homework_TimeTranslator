@@ -1,49 +1,57 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Missed calls");
-        PhoneContact phoneContact = new PhoneContact();
-        MissedCalls missedCalls = new MissedCalls();
-//        chooseAction(contacts);
+      PhoneContacts phoneContacts = new PhoneContacts();
         Scanner scanner = new Scanner(System.in);
         int chooseAction;
         String input = "";
-        while (!"end".equals(input)) {
+        while (!"5".equals(input)){
             printAction();
             input = scanner.nextLine();
             try {
                 chooseAction = Integer.parseInt(input);
-            } catch (NumberFormatException e) {
+            }catch (NumberFormatException e){
                 System.out.println("Choose action 1-4. Try again");
                 continue;
             }
-            switch (chooseAction) {
+            switch (chooseAction){
                 case 1:
-                    System.out.println("Enter new contact. \nWrite his Name, " +
-                            "Surname, Phone number, Group (separated by 'space'");
-
+                    System.out.println("Enter new contact.\n" +
+                            " Write his Name, Surname, Phone number, Group separated by 'space'.");
+                   Contact contact;
                     String contactBIO = scanner.nextLine();
-                    String[] contactInfo = contactBIO.split(" ");
-                    Contact contact;
-                    if (contactInfo.length == 4) {
-                        contact = new Contact(contactInfo[0], contactInfo[1], contactInfo[2], Group.isEqual(contactInfo[3]));
-                        if (phoneContact.contacts.containsValue(contact)) {
-                            System.out.println("Such contact exists.");
-                        } else {
-                            phoneContact.addContact(contactInfo[2], contact);
-                        }
-                    }
+                   String[] contactInfo = contactBIO.split(" ");
+                   if(contactInfo.length==4){
+                       contact = new Contact(contactInfo[0],contactInfo[1],
+                               contactInfo[2],Group.isEqual(contactInfo[3]));
+                       if(phoneContacts.contacts.containsValue(contact)){
+                           System.out.println("This contact exists");
+                       }
+                       else {
+                           phoneContacts.addContact(contactInfo[2],contact);
+                           phoneContacts.displayContacts();
+                       }
+                   }
+                   else {
+                       System.out.println("Write his Name, Surname, Phone number, Group. Try again");
+                       continue;
+                   }
+                case 2:
+                    System.out.println("Add missed call number");
+                    contact.e
+                case 3:
+                case 4:
             }
-//
-//                case 2:
-//
-//                case 3:
-//                case 4:
         }
-        phoneContact.displayContacts();
-        phoneContact.displayContacts2();
+        phoneContacts.displayContacts();
+        printAction();
     }
+
+
 
     public static void printAction() {
         System.out.println("Menu:\n" +

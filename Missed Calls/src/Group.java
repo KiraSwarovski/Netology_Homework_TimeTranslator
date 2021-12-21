@@ -22,5 +22,4 @@ public enum Group {
         }
         return null;
     }
-
 }
