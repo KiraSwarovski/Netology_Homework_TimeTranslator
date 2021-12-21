@@ -7,7 +7,17 @@ public class MissedCalls {
 
     public void addMissedCall(String missedNumber) {
         LocalDateTime lt = LocalDateTime.now();
-        missedCalls.put(lt,missedNumber);
+        missedCalls.put(lt, missedNumber);
+    }
+
+    public void clearContact() {
+        missedCalls.clear();
+    }
+
+    public void displayMissedCalls() {
+        for (Map.Entry<LocalDateTime, String> entry : missedCalls.entrySet()) {
+            System.out.println(entry.getKey()+" "+entry.getValue());
+        }
     }
 
 }
