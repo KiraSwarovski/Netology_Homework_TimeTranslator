@@ -13,6 +13,13 @@ public class Contact {
         Group = group;
     }
 
+    public String getName() {
+        return Name;
+    }
+
+    public String getSurname() {
+        return Surname;
+    }
 
     @Override
     public String toString() {

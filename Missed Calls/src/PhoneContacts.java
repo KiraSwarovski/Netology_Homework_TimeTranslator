@@ -9,6 +9,10 @@ public class PhoneContacts {
         contacts.put(number, contact);
     }
 
+    public Map<String, Contact> getContacts() {
+        return contacts;
+    }
+
     public void displayContacts() {
         System.out.println("Contact list: ");
 //        Iterator iter = contacts.entrySet().iterator();
