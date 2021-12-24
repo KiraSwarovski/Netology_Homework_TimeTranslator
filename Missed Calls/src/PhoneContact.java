@@ -21,7 +21,7 @@ public class PhoneContact {
         System.out.println("List2: ");
         for (Map.Entry<String, Contact> entry : contacts.entrySet()) {
             System.out.println(entry.getKey());
-            Iterator it = entry.getValue()
+//            Iterator it = entry.getValue();
         }
     }
 }
