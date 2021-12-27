@@ -1,4 +1,6 @@
-public class Candidate {
+import java.util.Objects;
+
+public class Candidate implements Comparable<Candidate>{
     private String name;
     private String sex;
     private String age;
@@ -13,6 +15,27 @@ public class Candidate {
         this.rating = rating;
     }
 
+    public int getRelevance() {
+        return relevance;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Candidate candidate = (Candidate) o;
+        return relevance == candidate.relevance && rating == candidate.rating && name.equals(candidate.name) && sex.equals(candidate.sex) && age.equals(candidate.age);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, sex, age, relevance, rating);
+    }
+
     @Override
     public String toString() {
         return "Candidate{" +
@@ -22,5 +45,10 @@ public class Candidate {
                 ", relevance=" + relevance +
                 ", rating=" + rating +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Candidate o) {
+        return this.name.compareTo(o.name);
     }
 }
