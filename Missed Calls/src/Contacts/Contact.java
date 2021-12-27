@@ -1,10 +1,10 @@
-import java.util.*;
+package Contacts;
 
 public class Contact {
     private String Name;
     private String Surname;
     private String Phone;
-    private Group Group;
+    private Contacts.Group Group;
 
     public Contact(String name, String surname, String phone, Group group) {
         Name = name;
@@ -21,8 +21,12 @@ public class Contact {
         return Surname;
     }
 
+    public String getPhone() {
+        return Phone;
+    }
+
     @Override
     public String toString() {
-        return Phone+" "+Name+" "+Surname+" "+Group;
+        return Phone + " " + Name + " " + Surname + " " + Group;
     }
 }

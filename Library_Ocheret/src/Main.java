@@ -7,9 +7,9 @@ public class Main {
 
         librarianAdmin.orderBooks(supplier);
         librarianAdmin.findBooks();
-        studentReader.pickUpBooks(studentReader);
+        studentReader.pickUpBooks(librarianAdmin);
         librarianAdmin.delayNotice(studentReader);
-        studentReader.dropOffBooks(studentReader);
+        studentReader.dropOffBooks(librarianAdmin);
         supplier.bringBooks();
     }
 }
