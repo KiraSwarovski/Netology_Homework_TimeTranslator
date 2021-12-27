@@ -1,7 +1,5 @@
-import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
+
 
 public class Main  {
     public static void main(String[] args) {
@@ -37,4 +35,3 @@ public class Main  {
         System.out.println("Surname First name Patronymic, gender, age, resume relevance, interview grade:");
     }
 }
-

@@ -1,4 +1,3 @@
-
 import java.util.Objects;
 
 public class Candidate implements Comparable<Candidate>{
@@ -19,8 +18,6 @@ public class Candidate implements Comparable<Candidate>{
     public int getRelevance() {
         return relevance;
     }
-
-
 
     public int getRating() {
         return rating;
@@ -52,10 +49,6 @@ public class Candidate implements Comparable<Candidate>{
 
     @Override
     public int compareTo(Candidate o) {
-//        Comparator<Candidate> compareByRelandRate = Comparator
-//                .comparing(Candidate::getRelevance)
-//                .thenComparing(Candidate::getRating);
-//        Collections.sort(candidates, compareByRelandRate);
-        return 0;
+        return this.name.compareTo(o.name);
     }
 }
