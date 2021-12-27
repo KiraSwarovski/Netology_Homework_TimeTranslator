@@ -1,8 +1,8 @@
 public interface Reader {
 
-    void  pickUpBooks(Reader reader);
+    void  pickUpBooks(Administrator administrator);
 
 
-     void dropOffBooks(Reader reader);
+     void dropOffBooks(Administrator Administrator);
 
 }

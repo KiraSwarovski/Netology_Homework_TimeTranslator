@@ -1,10 +1,12 @@
-import java.util.*;
+package Contacts;
+
+import Contacts.Group;
 
 public class Contact {
     private String Name;
     private String Surname;
     private String Phone;
-    private Group Group;
+    private Contacts.Group Group;
 
     public Contact(String name, String surname, String phone, Group group) {
         Name = name;
