@@ -12,7 +12,7 @@ public class Main  {
             input = scanner.nextLine();
             if("".equals(input)){
                 break;
-            }
+            }//
             String[] candidateInfo = input.split(", ");
             Candidate candidate;
             if (candidateInfo.length == 5) {

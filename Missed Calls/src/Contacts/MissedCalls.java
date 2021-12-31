@@ -11,6 +11,7 @@ public class MissedCalls {
     public void addMissedCall(String missedNumber) {
         LocalDateTime lt = LocalDateTime.now();
         missedCalls.put(lt, missedNumber);
+        //LOL
     }
 
     public void clearContact() {
@@ -23,12 +24,13 @@ public class MissedCalls {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss yyyy-MM-dd");
             String formatDateTime = entry.getKey().format(formatter);
             String name = phoneContacts.searchContactByPhoneNumber(entry.getValue());
-            if ("".equals(name)) {
-                System.out.println(formatDateTime + " " + entry.getValue());
-            } else {
-                System.out.println(formatDateTime + " " + name);
+            if("".equals(name)){
+                System.out.println(formatDateTime+" "+entry.getValue());
+            }
+            else {
+                System.out.println(formatDateTime+" "+name);
+
             }
         }
     }
-
 }
